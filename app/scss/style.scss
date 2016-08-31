@@ -1,0 +1,38 @@
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  // @include flex-center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(105deg, #CB1830, #E85500);
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.column {
+  @include font-main;
+  @include flex-center;
+  margin: 10px 5px;;
+  padding: 5px 20px;
+  background-color: rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.25);
+  color: white;
+
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+
+  &:first-of-type {
+    flex-grow: 2;
+    flex-shrink: 2;
+    flex-basis: 15px;
+  }
+}
