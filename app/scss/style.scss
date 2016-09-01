@@ -16,6 +16,41 @@ body {
 
 
 
+// BUTTON ##################
+
+.hyperlink-button {
+  @include flex-center;
+  height: 40px;
+  width: auto;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  background-color: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.25);
+  padding: 10px 15px;
+  transition: all 200ms ease-in;
+
+  a {
+    @include font-main;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: rgba(255,255,255,0.75);
+    border: 2px solid rgba(230,80,5,0.85);
+    transition: all 200ms ease-in;
+
+    a {
+      color: rgba(230,80,5,0.7);
+      transition: all 200ms ease-in;
+    }
+  }
+}
+
+
+
 // TWELVE COLUMN GRID SECTION ##################
 
 .twelve-column-grid {
@@ -126,4 +161,57 @@ section {
 
 .week:last-of-type .day:last-of-type {
   margin-right: 14.285%;
+}
+
+
+
+// HEADER_FOOTER SECTION (index2.html) ##############
+
+main {
+  height: 100vh;
+  width: 100%;
+
+  background: linear-gradient(-55deg, #43A047, #FBC02D);
+
+  display: flex;
+  flex-direction: column;
+
+  .section-header {
+    background: -webkit-linear-gradient(125deg, #43A047, #FBC02D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hyperlink-button {
+    &:hover {
+      border: 2px solid rgba(46,125,50,0.85);
+
+      a {
+        color: rgba(46,125,50,0.7);
+      }
+    }
+  }
+}
+
+header, footer {
+  @include flex-center;
+  flex: 0 0 100px;
+
+  background-color: rgba(255,255,255,0.05);
+
+  section {
+    width: 900px;
+  }
+}
+
+.main-content {
+  @include flex-center;
+  flex: 1 1 0;
+
+  border-top: 4px solid rgba(255,255,255,0.25);
+  border-bottom: 4px solid rgba(255,255,255,0.25);
+
+  section {
+    width: 900px;
+  }
 }
