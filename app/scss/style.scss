@@ -18,13 +18,12 @@ body {
 
 // BUTTON ##################
 
-.hyperlink-button {
+.previous-button, .next-button {
   @include flex-center;
   height: 40px;
   width: auto;
-  position: absolute;
   top: 30px;
-  right: 20px;
+  position: absolute;
   background-color: rgba(255,255,255,0.25);
   border: 2px solid rgba(255,255,255,0.25);
   padding: 10px 15px;
@@ -47,6 +46,14 @@ body {
       transition: all 200ms ease-in;
     }
   }
+}
+
+.previous-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
 }
 
 
@@ -182,7 +189,7 @@ main {
     -webkit-text-fill-color: transparent;
   }
 
-  .hyperlink-button {
+  .previous-button, .next-button {
     &:hover {
       border: 2px solid rgba(46,125,50,0.85);
 
@@ -222,6 +229,28 @@ header, footer {
     flex-direction: column;
   }
 }
+
+
+
+// SECTION THREE - PHOTOS ###########
+.container {
+  .previous-button, .next-button {
+    border: 2px solid rgba(0,0,0,0.85);
+
+    a {
+      color: rgba(0,0,0,0.7);
+    }
+    &:hover {
+      border: 2px solid rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.85);
+
+      a {
+        color: rgba(255,255,255,0.9);
+      }
+    }
+  }
+}
+
 
 
 // SCROLLBAR #####################
