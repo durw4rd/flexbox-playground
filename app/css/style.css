@@ -4,6 +4,12 @@
 body {
   height: 100vh;
   width: 100%;
+  padding: 0;
+  margin: 0; }
+
+.twelve-column-grid {
+  padding: 50px 0;
+  width: 100%;
   background: -webkit-linear-gradient(345deg, #CB1830, #E85500);
   background: linear-gradient(105deg, #CB1830, #E85500); }
 
@@ -14,10 +20,22 @@ section {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  section .column {
+  section .section-header {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     letter-spacing: 1px;
+    font-weight: 700;
+    text-align: center;
+    background: -webkit-linear-gradient(90deg, #E85500, #CB1830);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255, 255, 255, 0.15);
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+    font-size: 3em;
+    letter-spacing: 2px;
+    margin: 10px auto;
+    width: 80%; }
+  section .column {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -30,6 +48,9 @@ section {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
     margin: 10px 5px;
     padding: 5px 20px;
     background-color: rgba(255, 255, 255, 0.3);
@@ -63,3 +84,49 @@ section {
   -webkit-flex: 4 4 198px;
       -ms-flex: 4 4 198px;
           flex: 4 4 198px; }
+
+.calendar {
+  padding: 50px 0;
+  width: 100%;
+  background: -webkit-linear-gradient(165deg, #00796B, #1565C0);
+  background: linear-gradient(-75deg, #00796B, #1565C0); }
+  .calendar .section-header {
+    background: -webkit-linear-gradient(105deg, #00796B, #1565C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+.month {
+  max-width: 900px;
+  margin: 10px auto; }
+
+.week {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: white; }
+
+.day {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  height: 130px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25); }
+
+.week:first-of-type .day:first-of-type {
+  margin-left: 42.85714%; }
+
+.week:last-of-type .day:last-of-type {
+  margin-right: 14.285%; }

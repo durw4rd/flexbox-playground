@@ -1,3 +1,5 @@
+// GENERAL ##################
+
 @import 'mixins';
 
 * {
@@ -8,6 +10,17 @@ body {
   // @include flex-center;
   height: 100vh;
   width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+// TWELVE COLUMN GRID SECTION ##################
+
+.twelve-column-grid {
+  padding: 50px 0;
+  width: 100%;
   background: linear-gradient(105deg, #CB1830, #E85500);
 }
 
@@ -16,9 +29,28 @@ section {
   margin: 0 auto;
   display: flex;
 
-  .column {
+  .section-header {
     @include font-main;
+    font-weight: 700;
+    text-align: center;
+
+    background: -webkit-linear-gradient(90deg, #E85500, #CB1830);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255,255,255,0.15);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+
+    font-size: 3em;
+    letter-spacing: 2px;
+
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  .column {
     @include flex-center;
+    @include font-main;
+
     margin: 10px 5px;;
     padding: 5px 20px;
     background-color: rgba(255,255,255,0.3);
@@ -47,4 +79,51 @@ section {
       flex: 4 4 198px;
     }
   }
+}
+
+
+
+// CALENDAR SECTION ##################
+
+.calendar {
+  padding: 50px 0;
+  width: 100%;
+  background: linear-gradient(-75deg, #00796B, #1565C0);
+
+  .section-header {
+    background: -webkit-linear-gradient(105deg, #00796B, #1565C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.month {
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+.week {
+  @include font-main;
+  display: flex;
+  color: white;
+}
+
+.day {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+
+  height: 130px;
+  padding: 10px;
+
+  background-color: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.week:first-of-type .day:first-of-type {
+  margin-left: 42.85714%;
+}
+
+.week:last-of-type .day:last-of-type {
+  margin-right: 14.285%;
 }
