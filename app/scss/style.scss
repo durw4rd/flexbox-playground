@@ -207,11 +207,31 @@ header, footer {
 .main-content {
   @include flex-center;
   flex: 1 1 0;
+  flex-direction: column;
 
   border-top: 4px solid rgba(255,255,255,0.25);
   border-bottom: 4px solid rgba(255,255,255,0.25);
+  margin-left: 0.5em;
+
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   section {
     width: 900px;
+    @include flex-center;
+    flex-direction: column;
   }
+}
+
+
+// SCROLLBAR #####################
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: rgba(255,255,255,0.25);
+  border-left: 1px solid rgba(255,255,255,0.25);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.55);
 }
