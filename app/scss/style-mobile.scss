@@ -1,0 +1,353 @@
+// GENERAL ##################
+
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+// BUTTONS #######################
+
+.previous-button, .next-button {
+  @include flex-center;
+  height: 40px;
+  width: auto;
+  top: 30px;
+  position: absolute;
+  padding: 10px 15px;
+  transition: all 200ms ease-in;
+
+  a {
+    @include font-main;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  &.style-one {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.25);
+
+    a {
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.75);
+      border: 2px solid rgba(230,80,5,0.85);
+      transition: all 200ms ease-in;
+
+      a {
+        color: rgba(230,80,5,0.7);
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+
+  &.style-four {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(0,0,0,0.85);
+
+    a {
+      color: rgba(0,0,0,0.7);
+    }
+
+    &:hover {
+      border: 2px solid rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.85);
+      transition: all 200ms ease-in;
+
+      a {
+        color: rgba(255,255,255,0.9);
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+
+  &.style-four {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(0,0,0,0.85);
+
+    a {
+      color: rgba(0,0,0,0.7);
+    }
+
+    &:hover {
+      background-color: rgba(0,0,0,0.85);
+      border: 2px solid rgba(255,255,255,0.85);
+      transition: all 200ms ease-in;
+
+      a {
+        color: rgba(255,255,255,0.9);
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+}
+
+.previous-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+
+
+// MAIN CONTAINER SETTINGS ###################
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+
+  // twelve column grid
+  &.twelve-column-grid {
+    background: linear-gradient(105deg, #CB1830, #E85500);
+  }
+
+  // calendar
+  &.calendar {
+    background: linear-gradient(-75deg, #00796B, #1565C0);
+  }
+
+  // header footer
+  &.header-footer {
+    background: linear-gradient(-55deg, #43A047, #FBC02D);
+    flex-direction: column;
+  }
+
+  // photo album
+  &.container {
+    flex-direction: column;
+  }
+
+}
+
+
+
+// SECTION HEADERS ###########################
+
+.section-header {
+  @include font-main;
+  font-weight: 700;
+  text-align: center;
+  font-size: 3em;
+  letter-spacing: 0.03em;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  max-width: 80vw;
+
+  &.style-one {
+    background: -webkit-linear-gradient(90deg, #E85500, #CB1830);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255,255,255,0.15);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+  }
+
+  &.style-two {
+    background: -webkit-linear-gradient(105deg, #00796B, #1565C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255,255,255,0.15);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+  }
+
+  &.style-three {
+    background: -webkit-linear-gradient(125deg, #43A047, #FBC02D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255,255,255,0.15);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+    &.no-margin-top {
+      margin-top: 20px;
+    }
+  }
+
+  &.style-four {
+    background: -webkit-linear-gradient(-90deg, #E0E0E0, #757575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(0,0,0,0.15);
+    -webkit-text-stroke: 1.5px rgba(0,0,0,0.25);
+  }
+}
+
+
+
+// TWELVE COLUMN GRID SECTION (index.html) ###########
+
+.twelve-column-grid {
+  section {
+    min-width: 320px;
+    max-width: 80vw;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .column {
+    @include flex-center;
+    @include font-main;
+
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(255,255,255,0.3);
+    border: 2px solid rgba(255,255,255,0.25);
+    color: white;
+    font-size: 0.6em;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+
+  .first-row {
+    .column {
+      &:first-of-type {
+      flex-grow: 2;
+      flex-shrink: 2;
+      flex-basis: 38px;
+      }
+    }
+  }
+
+  .sixth-row {
+    .column {
+      &:nth-of-type(2) {
+        flex: 4 4 90px;
+      }
+    }
+  }
+}
+
+
+
+// CALENDAR SECTION (index2.html) ##################
+.calendar {
+  .month {
+    width: 340px;
+    margin: 10px auto;
+  }
+
+  .week {
+    @include font-main;
+    display: flex;
+    color: white;
+  }
+
+  .day {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    height: 48.5px;
+    padding: 4px;
+
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .week:first-of-type .day:first-of-type {
+    margin-left: 42.85714%;
+  }
+
+  .week:last-of-type .day:last-of-type {
+    margin-right: 14.285%;
+  }
+}
+
+
+
+// HEADER_FOOTER SECTION (index3.html) ##############
+
+.header-footer {
+  header {
+    @include flex-center;
+    flex: 0 0 150px;
+    width: 100vw;
+
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  footer {
+    @include flex-center;
+    flex: 0 0 100px;
+    width: 100vw;
+
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  .main-content {
+    flex: 1 1 0;
+    width: 100%;
+
+    border-top: 4px solid rgba(255,255,255,0.25);
+    border-bottom: 4px solid rgba(255,255,255,0.25);
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      // flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .section-content {
+      @include flex-center;
+      @include font-main;
+      width: (100% / 3.3);
+      height: 150px;
+      background-color: rgba(255,255,255,0.25);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: 2%;
+      margin: 5px;
+      color: #fff;
+    }
+
+    // SCROLLBAR #####################
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      background-color: rgba(255,255,255,0.25);
+      border-left: 1px solid rgba(255,255,255,0.25);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255,255,255,0.55);
+    }
+  }
+}
+
+
+
+.photos {
+  @include flex-center;
+  flex-wrap: wrap;
+
+  img {
+    width: 90vw;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+    border: 1.5px solid rgba(0,0,0,0.35);
+
+    box-shadow: 3px 3px 2px #757575;
+  }
+}
