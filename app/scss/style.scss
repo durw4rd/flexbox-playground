@@ -7,7 +7,6 @@
 }
 
 body {
-  // @include flex-center;
   height: 100vh;
   width: 100%;
   padding: 0;
@@ -16,7 +15,7 @@ body {
 
 
 
-// BUTTON ##################
+// BUTTONS #######################
 
 .previous-button, .next-button {
   @include flex-center;
@@ -24,26 +23,72 @@ body {
   width: auto;
   top: 30px;
   position: absolute;
-  background-color: rgba(255,255,255,0.25);
-  border: 2px solid rgba(255,255,255,0.25);
   padding: 10px 15px;
   transition: all 200ms ease-in;
 
   a {
     @include font-main;
     font-weight: 400;
-    color: white;
     text-decoration: none;
   }
 
-  &:hover {
-    background-color: rgba(255,255,255,0.75);
-    border: 2px solid rgba(230,80,5,0.85);
-    transition: all 200ms ease-in;
+  &.style-one {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.25);
 
     a {
-      color: rgba(230,80,5,0.7);
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.75);
+      border: 2px solid rgba(230,80,5,0.85);
       transition: all 200ms ease-in;
+
+      a {
+        color: rgba(230,80,5,0.7);
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+
+  &.style-three {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.25);
+
+    a {
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.75);
+      border: 2px solid rgba(46,125,50,0.85);
+      transition: all 200ms ease-in;
+
+      a {
+        color: rgba(46,125,50,0.7);
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+
+  &.style-four {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(0,0,0,0.85);
+
+    a {
+      color: rgba(0,0,0,0.7);
+    }
+
+    &:hover {
+      border: 2px solid rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.85);
+      transition: all 200ms ease-in;
+
+      a {
+        color: rgba(255,255,255,0.9);
+        transition: all 200ms ease-in;
+      }
     }
   }
 }
@@ -58,37 +103,92 @@ body {
 
 
 
-// TWELVE COLUMN GRID SECTION ##################
+// MAIN CONTAINER SETTINGS ###################
 
-.twelve-column-grid {
-  padding: 50px 0;
+.container {
+  display: flex;
+  align-items: center;
   width: 100%;
-  background: linear-gradient(105deg, #CB1830, #E85500);
+  min-height: 100vh;
 
-  section {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
+  // twelve column grid
+  &.twelve-column-grid {
+    background: linear-gradient(105deg, #CB1830, #E85500);
   }
+
+  // calendar
+  &.calendar {
+    background: linear-gradient(-75deg, #00796B, #1565C0);
+  }
+
+  // header footer
+  &.header-footer {
+    background: linear-gradient(-55deg, #43A047, #FBC02D);
+    flex-direction: column;
+  }
+
+  // photo album
+  &.container {
+    flex-direction: column;
+  }
+
 }
 
-section {
-  .section-header {
-    @include font-main;
-    font-weight: 700;
-    text-align: center;
 
+
+// SECTION HEADERS ###########################
+.section-header {
+  @include font-main;
+  font-weight: 700;
+  text-align: center;
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin: 20px auto;
+  width: 100%;
+
+  &.style-one {
     background: -webkit-linear-gradient(90deg, #E85500, #CB1830);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 2px rgba(255,255,255,0.15);
     -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+  }
 
-    font-size: 3em;
-    letter-spacing: 2px;
+  &.style-two {
+    background: -webkit-linear-gradient(105deg, #00796B, #1565C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255,255,255,0.15);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+  }
 
-    margin: 20px auto;
-    width: 80%;
+  &.style-three {
+    background: -webkit-linear-gradient(125deg, #43A047, #FBC02D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(255,255,255,0.15);
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+  }
+
+  &.style-four {
+    background: -webkit-linear-gradient(-90deg, #E0E0E0, #757575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px rgba(0,0,0,0.15);
+    -webkit-text-stroke: 1.5px rgba(0,0,0,0.25);
+  }
+}
+
+
+
+
+// TWELVE COLUMN GRID SECTION (index.html) ###########
+
+.twelve-column-grid {
+  section {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
   }
 
   .column {
@@ -105,172 +205,126 @@ section {
     flex-shrink: 1;
     flex-basis: 0;
   }
-}
 
-.first-section {
-  .column {
-    &:first-of-type {
-    flex-grow: 2;
-    flex-shrink: 2;
-    flex-basis: 99px;
+  .first-row {
+    .column {
+      &:first-of-type {
+      flex-grow: 2;
+      flex-shrink: 2;
+      flex-basis: 99px;
+      }
+    }
+  }
+
+  .sixth-row {
+    .column {
+      &:nth-of-type(2) {
+        flex: 4 4 198px;
+      }
     }
   }
 }
 
-.sixth-section {
-  .column {
-    &:nth-of-type(2) {
-      flex: 4 4 198px;
-    }
-  }
-}
 
 
-
-// CALENDAR SECTION ##################
-
+// CALENDAR SECTION (index2.html) ##################
 .calendar {
-  padding: 50px 0;
-  width: 100%;
-  background: linear-gradient(-75deg, #00796B, #1565C0);
-
-  .section-header {
-    background: -webkit-linear-gradient(105deg, #00796B, #1565C0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 30px;
-  }
-}
-
-.month {
-  max-width: 900px;
-  margin: 10px auto;
-}
-
-.week {
-  @include font-main;
-  display: flex;
-  color: white;
-}
-
-.day {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-
-  height: 130px;
-  padding: 10px;
-
-  background-color: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-}
-
-.week:first-of-type .day:first-of-type {
-  margin-left: 42.85714%;
-}
-
-.week:last-of-type .day:last-of-type {
-  margin-right: 14.285%;
-}
-
-
-
-// HEADER_FOOTER SECTION (index2.html) ##############
-
-main {
-  height: 100vh;
-  width: 100%;
-
-  background: linear-gradient(-55deg, #43A047, #FBC02D);
-
-  display: flex;
-  flex-direction: column;
-
-  .section-header {
-    background: -webkit-linear-gradient(125deg, #43A047, #FBC02D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .previous-button, .next-button {
-    &:hover {
-      border: 2px solid rgba(46,125,50,0.85);
-
-      a {
-        color: rgba(46,125,50,0.7);
-      }
-    }
-  }
-}
-
-header, footer {
-  @include flex-center;
-  flex: 0 0 100px;
-
-  background-color: rgba(255,255,255,0.05);
-
-  section {
+  .month {
     width: 900px;
+    margin: 10px auto;
+  }
+
+  .week {
+    @include font-main;
+    display: flex;
+    color: white;
+  }
+
+  .day {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    height: 130px;
+    padding: 10px;
+
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .week:first-of-type .day:first-of-type {
+    margin-left: 42.85714%;
+  }
+
+  .week:last-of-type .day:last-of-type {
+    margin-right: 14.285%;
   }
 }
 
-.main-content {
-  @include flex-center;
-  flex: 1 1 0;
-  flex-direction: column;
 
-  border-top: 4px solid rgba(255,255,255,0.25);
-  border-bottom: 4px solid rgba(255,255,255,0.25);
-  margin-left: 0.5em;
 
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+// HEADER_FOOTER SECTION (index3.html) ##############
 
-  section {
-    width: 900px;
+.header-footer {
+  header, footer {
     @include flex-center;
-    flex-direction: column;
+    flex: 0 0 100px;
+    width: 100vw;
+
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  .main-content {
+    flex: 1 1 0;
+    width: 100%;
+
+    border-top: 4px solid rgba(255,255,255,0.25);
+    border-bottom: 4px solid rgba(255,255,255,0.25);
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      // flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .section-content {
+      @include flex-center;
+      @include font-main;
+      width: (100% / 3.3);
+      height: 150px;
+      background-color: rgba(255,255,255,0.25);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: 2%;
+      margin: 5px;
+      color: #fff;
+    }
+
+    // SCROLLBAR #####################
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      background-color: rgba(255,255,255,0.25);
+      border-left: 1px solid rgba(255,255,255,0.25);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255,255,255,0.55);
+    }
   }
 }
 
 
 
-// SECTION THREE - PHOTOS ###########
-.container {
-  width: 100%;
-
-  // overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-
-  .section-header {
-    background: -webkit-linear-gradient(-90deg, #E0E0E0, #757575);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .previous-button, .next-button {
-    border: 2px solid rgba(0,0,0,0.85);
-
-    a {
-      color: rgba(0,0,0,0.7);
-    }
-    &:hover {
-      border: 2px solid rgba(255,255,255,0.85);
-      background: rgba(0,0,0,0.85);
-
-      a {
-        color: rgba(255,255,255,0.9);
-      }
-    }
-  }
-}
+// PHOTOS ALBUM (index4.html) ###########
 
 .photos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   flex-wrap: wrap;
 
   img {
@@ -282,18 +336,4 @@ header, footer {
 
     box-shadow: 3px 3px 2px #757575;
   }
-}
-
-
-
-// SCROLLBAR #####################
-
-::-webkit-scrollbar {
-  width: 0.5em;
-  background-color: rgba(255,255,255,0.25);
-  border-left: 1px solid rgba(255,255,255,0.25);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,0.55);
 }
