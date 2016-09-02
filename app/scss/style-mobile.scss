@@ -52,6 +52,26 @@ body {
     }
   }
 
+  &.style-three {
+    background-color: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.25);
+
+    a {
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.75);
+      border: 2px solid rgba(46,125,50,0.85);
+      transition: all 200ms ease-in;
+
+      a {
+        color: rgba(46,125,50,0.7);
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+
   &.style-four {
     background-color: rgba(255,255,255,0.25);
     border: 2px solid rgba(0,0,0,0.85);
@@ -313,12 +333,13 @@ body {
       @include flex-center;
       @include font-main;
       width: (100% / 3.3);
-      height: 150px;
+      height: 100px;
       background-color: rgba(255,255,255,0.25);
       border: 2px solid rgba(255,255,255,0.25);
       border-radius: 2%;
       margin: 5px;
       color: #fff;
+      font-size: 1.5em;
     }
 
     // SCROLLBAR #####################

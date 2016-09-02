@@ -47,6 +47,20 @@ body {
         color: rgba(230, 80, 5, 0.7);
         -webkit-transition: all 200ms ease-in;
         transition: all 200ms ease-in; }
+  .previous-button.style-three, .next-button.style-three {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.25); }
+    .previous-button.style-three a, .next-button.style-three a {
+      color: white; }
+    .previous-button.style-three:hover, .next-button.style-three:hover {
+      background-color: rgba(255, 255, 255, 0.75);
+      border: 2px solid rgba(46, 125, 50, 0.85);
+      -webkit-transition: all 200ms ease-in;
+      transition: all 200ms ease-in; }
+      .previous-button.style-three:hover a, .next-button.style-three:hover a {
+        color: rgba(46, 125, 50, 0.7);
+        -webkit-transition: all 200ms ease-in;
+        transition: all 200ms ease-in; }
   .previous-button.style-four, .next-button.style-four {
     background-color: rgba(255, 255, 255, 0.25);
     border: 2px solid rgba(0, 0, 0, 0.85); }
@@ -333,12 +347,13 @@ body {
     font-weight: 300;
     letter-spacing: 1px;
     width: 30.30303%;
-    height: 150px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0.25);
     border: 2px solid rgba(255, 255, 255, 0.25);
     border-radius: 2%;
     margin: 5px;
-    color: #fff; }
+    color: #fff;
+    font-size: 1.5em; }
   .header-footer .main-content::-webkit-scrollbar {
     width: 0.5em;
     background-color: rgba(255, 255, 255, 0.25);
