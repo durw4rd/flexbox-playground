@@ -130,6 +130,7 @@ body {
   align-items: center;
   width: 100vw;
   min-height: 100vh;
+  flex-direction: column;
 
   // twelve column grid
   &.twelve-column-grid {
@@ -144,14 +145,7 @@ body {
   // header footer
   &.header-footer {
     background: linear-gradient(-55deg, #43A047, #FBC02D);
-    flex-direction: column;
   }
-
-  // photo album
-  &.container {
-    flex-direction: column;
-  }
-
 }
 
 
