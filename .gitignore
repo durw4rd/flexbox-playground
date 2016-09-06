@@ -38,5 +38,3 @@ Thumbs.db
 
 #Ignore these directories
 node_modules
-images
-dist
