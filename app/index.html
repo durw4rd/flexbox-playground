@@ -3,63 +3,43 @@
 <head>
 	<title>Flexbox Gridzz</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 
 	<link rel='stylesheet'
 				media='screen and (max-width: 900px)' href='css/style-mobile.css'/>
 	<link rel='stylesheet'
 				media='screen and (min-width: 901px)' href='css/style-desktop.css'/>
-				
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 </head>
 
 <body>
-	<!-- buttons with absolute position -->
-  <div class="previous-button style-one">
-    <a href="index4.html" class="button">Previous section</a>
-  </div>
-  <div class="next-button style-one">
-    <a href="index2.html" class="button">Next section</a>
-  </div>
+  <main class="container homepage">
+    <h1 class="page-title">Flexbox Playground</h1>
+    <div class="intro">
+      <p>Hi! This site consists of several almost childishly simple views that use exlusively flexbox for arranging elements on the page. It doesn't burst with useful functionality (yet?) but: <br>a) It's responsive <br>b) The code is (in my eyes) pretty nice and clean.</p>
+      <p>To make things as smooth as possible I have used the automated help of my new best friend Gulp, while exploring the powers of Sass. For mobile view I put media query in use.</p>
+    </div>
+    <section class="button-wrapper">
+      <div class="button style-index">
+        <a href="html/grid.html" class="button">Twelve column grid</a>
+      </div>
 
-  <main class="container twelve-column-grid">
-    <section>
-      <h1 class="section-header style-one">Twelve Column Grid</h1>
-    </section>
+      <div class="button style-index">
+        <a href="html/calendar.html" class="button">Calendar</a>
+      </div>
 
-    <section class="first-row">
-      <div class="column">Half</div>
-      <div class="column">Fourth</div>
-      <div class="column">Fourth</div>
-    </section>
-    <section class="second-row">
-      <div class="column">Fourth</div>
-      <div class="column">Fourth</div>
-      <div class="column">Fourth</div>
-      <div class="column">Fourth</div>
-    </section>
-    <section class="third-row">
-      <div class="column">Third</div>
-      <div class="column">Third</div>
-      <div class="column">Third</div>
-    </section>
-    <section class="fourth-row">
-      <div class="column">Sixth</div>
-      <div class="column">Sixth</div>
-      <div class="column">Sixth</div>
-      <div class="column">Sixth</div>
-      <div class="column">Sixth</div>
-      <div class="column">Sixth</div>
-    </section>
-    <section class="fifth-row">
-      <div class="column">Half</div>
-      <div class="column">Half</div>
-    </section>
-    <section class="sixth-row">
-      <div class="column">Sixth</div>
-      <div class="column">Two Thirds</div>
-      <div class="column">Sixth</div>
+      <div class="button style-index">
+        <a href="html/header-footer.html" class="button">Fix header & footer</a>
+      </div>
+
+      <div class="button style-index">
+        <a href="html/photo-album.html" class="button">Photo album</a>
+      </div>
     </section>
   </main>
+
 </body>
+</html>
