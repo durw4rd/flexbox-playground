@@ -1,3 +1,30 @@
+buttonGraphic.graphicTwo {
+  width:128px;
+  height:44px;
+  bottom:145px;
+  left:-7px;
+  background-color: red;
+  background-image: url("//cdn.optimizely.com/img/5517080075/2d2e942c84b54e669b0db9f51a48b58a.png");
+}
+
+@media all and (max-device-width: 767px) and (min-device-width: 592px)
+{
+	.buttonGraphic.graphicTwo {
+		background-color: green;
+		bottom:120px;
+		left: none;
+	 	right: 52.289%;
+  	}
+}
+
+@media screen and (max-width: 599px)
+{
+	.buttonGraphic.graphicTwo {
+    bottom:120px;
+  }
+}
+
+/* my code */
 * {
   box-sizing: border-box; }
 
