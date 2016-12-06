@@ -7,7 +7,7 @@
   background-image: url("//cdn.optimizely.com/img/5517080075/2d2e942c84b54e669b0db9f51a48b58a.png");
 }
 
-@media all and (max-device-width: 767px) and (min-device-width: 592px)
+@media all and (max-device-width: 1250px) and (min-device-width: 1100px)
 {
 	.buttonGraphic.graphicTwo {
 		background-color: green;
@@ -17,7 +17,7 @@
   	}
 }
 
-@media screen and (max-width: 599px)
+@media screen and (max-width: 1100px)
 {
 	.buttonGraphic.graphicTwo {
     bottom:120px;
