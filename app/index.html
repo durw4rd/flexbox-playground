@@ -38,7 +38,7 @@
   <main class="container homepage">
     <h1 class="page-title">Flexbox Playground</h1>
 		<section class="button-wrapper">
-      <div class="button style-index">
+      <div class="button style-index" id="custom-event-trigger">
         <a href="#bottom-of-the-page" class="button">Custom event button</a>
       </div>
 		</section>
@@ -66,6 +66,14 @@
 		<div id="bottom-of-the-page"></div>
   </main>
 
+	<script>
+	window['optimizely'] = window['optimizely'] || [];
+	$("#custom-event-trigger").bind("mousedown", function() {
+		window['optimizely'].push({
+			type: "event",
+			eventName: "custom_event_test"
+		}); 
+	});
+	</script>
 </body>
 </html>
-gulp
