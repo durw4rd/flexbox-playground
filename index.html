@@ -20,7 +20,7 @@
 		ga('send', 'pageview');
 
 	</script>
-	
+
 	<script>
 		var audienceVar = 5;
 	</script>
@@ -72,11 +72,12 @@
 
 	<script>
 	window['optimizely'] = window['optimizely'] || [];
+	var $ = optimizely.get('jquery');
 	$("#custom-event-trigger").bind("mousedown", function() {
 		window['optimizely'].push({
 			type: "event",
 			eventName: "custom_event_test"
-		}); 
+		});
 	});
 	</script>
 </body>
