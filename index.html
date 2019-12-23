@@ -34,7 +34,7 @@
 				console.log(`Full Stack datafile ready: ${result.success}`);
 			}
 			var userId = 'defaultWebUser';
-			var snippetEnabled = optimizelyClientInstance.isFeatureEnabled('web_snippet', userId);
+			var snippetEnabled = optimizelyClient.isFeatureEnabled('web_snippet', userId);
 			var snippetUrl = optimizelyClient.getFeatureVariableString('web_snippet', 'url', userId);
 			if (!!snippetEnabled) {
 				var webSnippet = document.createElement('script');
