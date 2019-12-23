@@ -35,9 +35,11 @@
 			}
 			var userId = 'defaultWebUser';
 			var snippetUrl = optimizelyClient.getFeatureVariableString('web_snippet', 'url', userId);
-			var webSnippet = document.createElement('script');
-			webSnippet.src = snippetUrl;
-			document.head.appendChild(webSnippet);
+			if (!!snippetUrl) {
+				var webSnippet = document.createElement('script');
+				webSnippet.src = snippetUrl;
+				document.head.appendChild(webSnippet);
+			} 
 		});
 	</script>
 	<!-- END Optimizely Full Stack -->
