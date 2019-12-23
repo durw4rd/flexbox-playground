@@ -12,16 +12,42 @@
 			f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-N29JBVF');
 	</script>
-	<!-- End Google Tag Manager -->
+	<!-- END Google Tag Manager -->
 
+	<!-- Optimizely Full Stack -->
+	<script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js">// loads Optimizely Full Stack SDK as 'optimizelySdk'</script> 
+	<script>
+		optimizelySdk.setLogLevel(null); // set log level
+		var optimizelyClient = optimizelySdk.createInstance({ 
+			sdkKey: 'HvJfjTT5d73b4zZkfyKqEp',
+			// datafileOptions: {
+			// 	autoUpdate: true,
+			// 	updateInterval: 2000,
+			// 	urlTemplate: 'https://cdn.optimizely.com/datafiles/%s.json'
+			// }
+		});
+		optimizelyClient.onReady({ timeout: 2500 }).then(result => {
+			if (result.success === false) {
+				console.log(`couldn't fetch datafile because: ${result.reason}`);
+				return;
+			} else {
+				console.log(`Full Stack datafile ready: ${result.success}`);
+			}
+			var userId = 'defaultWebUser';
+			var snippetUrl = optimizelyClient.getFeatureVariableString('web_snippet', 'url', userId);
+			var webSnippet = document.createElement('script');
+			webSnippet.src = snippetUrl;
+			document.head.appendChild(webSnippet);
+		});
+	</script>
+	<!-- END Optimizely Full Stack -->
+	
 	<!-- Optimizely -->
 	<!-- Optimizely X Web -->
 	<!-- <script src="https://cdn.optimizely.com/js/7848692098.js"></script> -->
-	<!-- <script src="https://cdn.optimizely.com/public/7768850285/s/retro.js"></script> -->
 	<!-- Optimizely Edge -->
-	<script src="https://optimizely-edge.com/edge-client/v1/7768850285/16865879270"></script>
+	<!-- <script src="https://optimizely-edge.com/edge-client/v1/7768850285/16865879270"></script> -->
 	<!-- End Optimizely -->
-
 
 	<!-- <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
