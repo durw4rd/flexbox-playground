@@ -48,7 +48,8 @@
 	<!-- START Optimizely Full Stack -->
 	<script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js">// loads Optimizely Full Stack SDK as 'optimizelySdk'</script> 
 	<script>
-		optimizelySdk.setLogLevel(debug); // set log level
+		// optimizelySdk.setLogger(optimizelySdk.logging.createLogger());
+		optimizelySdk.setLogLevel('debug'); // set log level
 		var optimizelyClient = optimizelySdk.createInstance({ 
 			sdkKey: 'HvJfjTT5d73b4zZkfyKqEp',
 			// datafileOptions: {
