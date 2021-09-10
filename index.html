@@ -48,7 +48,7 @@
 	<!-- START Optimizely Full Stack -->
 	<script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js">// loads Optimizely Full Stack SDK as 'optimizelySdk'</script> 
 	<script>
-		optimizelySdk.setLogLevel(null); // set log level
+		optimizelySdk.setLogLevel(debug); // set log level
 		var optimizelyClient = optimizelySdk.createInstance({ 
 			sdkKey: 'HvJfjTT5d73b4zZkfyKqEp',
 			// datafileOptions: {
@@ -71,7 +71,9 @@
 				var webSnippet = document.createElement('script');
 				webSnippet.src = snippetUrl;
 				document.head.appendChild(webSnippet);
-			} 
+			}
+			
+			optimizelyClient.activate('everyone_test', userId);
 		});
 	</script>
 	<!-- END Optimizely Full Stack -->
