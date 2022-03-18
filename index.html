@@ -59,6 +59,8 @@
 			// 	updateInterval: 2000,
 			// 	urlTemplate: 'https://cdn.optimizely.com/datafiles/%s.json'
 			// }
+			eventBatchSize: 100,
+  			eventFlushInterval: 5000
 		});
 		optimizelyClient.onReady({ timeout: 2500 }).then(result => {
 			if (result.success === false) {
