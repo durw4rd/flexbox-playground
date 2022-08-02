@@ -264,6 +264,13 @@ body {
   .intro p {
     text-align: justify; }
 
+#bottom-of-the-page {
+  position: absolute;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: cyan; }
+
 .twelve-column-grid section {
   width: 900px;
   margin: 0 auto;
