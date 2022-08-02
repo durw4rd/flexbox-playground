@@ -56,7 +56,7 @@
 		};
 		const LDInstance = LDClient.initialize('62e152c30e7117115603feae', user);
 		LDInstance.on('ready', () => {
-			const flagValues = client.allFlags();
+			const flagValues = LDInstance.allFlags();
 			console.log(flagValues);
 		});
 
