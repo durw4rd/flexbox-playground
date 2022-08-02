@@ -54,8 +54,8 @@
 			key: 'defaultWebUser',
 			name: 'Boris'
 		};
-		const ldInstance = ldclient-js.initialize('62e152c30e7117115603feae', user);
-		client.on('ready', () => {
+		const LDInstance = LDClient.initialize('62e152c30e7117115603feae', user);
+		LDInstance.on('ready', () => {
 			const flagValues = client.allFlags();
 			console.log(flagValues);
 		});
