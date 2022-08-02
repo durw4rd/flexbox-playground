@@ -54,7 +54,7 @@
 			key: 'defaultWebUser',
 			name: 'Boris'
 		};
-		const ldInstance = ldclient.initialize('62e152c30e7117115603feae', user);
+		const ldInstance = LDclient.initialize('62e152c30e7117115603feae', user);
 		client.on('ready', () => {
 			const flagValues = client.allFlags();
 			console.log(flagValues);
@@ -64,38 +64,38 @@
 
 
 	<!-- START Optimizely Full Stack -->
-	<script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js">// loads Optimizely Full Stack SDK as 'optimizelySdk'</script> 
+	<!-- <script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js">// loads Optimizely Full Stack SDK as 'optimizelySdk'</script>  -->
 	<script>
 		// optimizelySdk.setLogger(optimizelySdk.logging.createLogger());
-		optimizelySdk.setLogLevel('debug'); // set log level
-		var optimizelyClient = optimizelySdk.createInstance({ 
-			sdkKey: 'HvJfjTT5d73b4zZkfyKqEp',
-			// datafileOptions: {
-			// 	autoUpdate: true,
-			// 	updateInterval: 2000,
-			// 	urlTemplate: 'https://cdn.optimizely.com/datafiles/%s.json'
-			// }
-			eventBatchSize: 100,
-  			eventFlushInterval: 5000
-		});
-		optimizelyClient.onReady({ timeout: 2500 }).then(result => {
-			if (result.success === false) {
-				console.log(`couldn't fetch datafile because: ${result.reason}`);
-				return;
-			} else {
-				console.log(`Full Stack datafile ready: ${result.success}`);
-			}
-			var userId = 'defaultWebUser';
-			var snippetEnabled = optimizelyClient.isFeatureEnabled('web_snippet', userId);
-			var snippetUrl = optimizelyClient.getFeatureVariableString('web_snippet', 'url', userId);
-			if (!!snippetEnabled) {
-				var webSnippet = document.createElement('script');
-				webSnippet.src = snippetUrl;
-				document.head.appendChild(webSnippet);
-			}
+		// optimizelySdk.setLogLevel('debug'); // set log level
+		// var optimizelyClient = optimizelySdk.createInstance({ 
+		// 	sdkKey: 'HvJfjTT5d73b4zZkfyKqEp',
+		// 	// datafileOptions: {
+		// 	// 	autoUpdate: true,
+		// 	// 	updateInterval: 2000,
+		// 	// 	urlTemplate: 'https://cdn.optimizely.com/datafiles/%s.json'
+		// 	// }
+		// 	eventBatchSize: 100,
+  		// 	eventFlushInterval: 5000
+		// });
+		// optimizelyClient.onReady({ timeout: 2500 }).then(result => {
+		// 	if (result.success === false) {
+		// 		console.log(`couldn't fetch datafile because: ${result.reason}`);
+		// 		return;
+		// 	} else {
+		// 		console.log(`Full Stack datafile ready: ${result.success}`);
+		// 	}
+		// 	var userId = 'defaultWebUser';
+		// 	var snippetEnabled = optimizelyClient.isFeatureEnabled('web_snippet', userId);
+		// 	var snippetUrl = optimizelyClient.getFeatureVariableString('web_snippet', 'url', userId);
+		// 	if (!!snippetEnabled) {
+		// 		var webSnippet = document.createElement('script');
+		// 		webSnippet.src = snippetUrl;
+		// 		document.head.appendChild(webSnippet);
+		// 	}
 			
-			optimizelyClient.activate('everyone_test', userId);
-		});
+		// 	optimizelyClient.activate('everyone_test', userId);
+		// });
 	</script>
 	<!-- END Optimizely Full Stack -->
 	
