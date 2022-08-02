@@ -18,14 +18,13 @@
 	<!-- END Google Tag Manager -->
 
 	<!-- START Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136103615-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4B53T4V4"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-136103615-1');
-	gtag('config', 'G-251696187');
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-FH4B53T4V4');
 	</script>
 	<!-- END Global site tag (gtag.js) -->
 
@@ -52,12 +51,38 @@
 	<script>
 		const user = {
 			key: 'defaultWebUser',
-			name: 'Boris'
+			name: 'Boris',
+			custom: {
+				experiment: true
+			}
 		};
+
+		const initOptions = {
+			evaluationReasons: true,
+			logger: LDClient.createConsoleLogger("debug")
+		};
+
 		const LDInstance = LDClient.initialize('62e152c30e7117115603feae', user);
 		LDInstance.on('ready', () => {
+			const flagKey = "multivariate-flag"
+
 			const flagValues = LDInstance.allFlags();
 			console.log(flagValues);
+
+			let detail = LDInstance.variationDetail(flagKey, false);
+			let { value, variationIndex, reason } = detail;
+			detail.flagKey = flagKey;
+			console.log(detail);
+
+			// window.dataLayer.push({
+			// 	'event':'LDvariationDetail',
+			// 	'experimentName': flagKey,
+			// 	'action': 'content loaded',
+			// 	'category': 'experiment',
+			// 	'label': `${flagKey}-evaluatted`,
+			// 	value,
+			// 	variationIndex
+			// });
 		});
 
 	</script>
