@@ -47,7 +47,22 @@
 	</script>
 	<!-- END Server-side GTM container -->
 	
-	
+	<!-- START LaunchDarkly -->
+	<script src="https://unpkg.com/launchdarkly-js-client-sdk@2.22.1/dist/ldclient.min.js">// Loads LD SDK</script>
+	<script>
+		const user = {
+			key: 'defaultWebUser',
+			name: 'Boris'
+		};
+		const ldInstance = ldclient.initialize('62e152c30e7117115603feae', user);
+		client.on('ready', () => {
+			const flagValues = client.allFlags();
+			console.log(flagValues);
+		});
+
+	</script>
+
+
 	<!-- START Optimizely Full Stack -->
 	<script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js">// loads Optimizely Full Stack SDK as 'optimizelySdk'</script> 
 	<script>
